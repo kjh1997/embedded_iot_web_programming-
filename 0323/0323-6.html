@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head><title>데이터 목록을 가진 텍스트 입력</title></head>
+<body>
+<h3>가보고 싶은 곳</h3>
+<hr>
+<div class="col"> 
+<form>
+나라 : <input type="text" list="countries"><br>
+<datalist id="countries">
+<option value="가나">
+<option value="스위스">
+<option value="브라질">
+</datalist>
+보고싶은것 : <input type="text" list="what"><br>
+<datalist id="what">
+<option value="산">
+<option value="바다">
+<option value="도시">
+</datalist>
+</form>
+</div>
+<div class="col">
+<form>
+    검색: <input type="text" size="10" value="">
+    <input type="button" value="Q1">
+    <button type="button">Q2</button><br>
+    submit 버튼 : <input type="submit" value="전송1">
+    <button type="submit">전송2</button><br>
+    reset 버튼 : <input type="reset" value="리셋1">
+    <button type="reset">리셋2</button><br>
+    이미지버튼 : <input type="image" src="../media/mango.png" 
+    alt="이미지 버튼" >
+    <button type="button" onclick="location.href='0323-2.html'">
+    <img src="../media/mango.png" alt="이미지 버튼">
+    </button>
+    </form>
+    <form>
+        <select name="china">
+        <option value="1">짜장면</option>
+        <option value="2" selected>짬뽕</option>
+        <option value="3">탕수육</option>
+        </select>
+        </form>
+        <form>
+            <label>
+            <input type="radio" name="china" value="1">
+            짜장면 <img src="../media/mango.png">
+            </label><br>
+            <label>
+            <input type="radio" name="china" value="2" checked>
+            짬뽕 <img src="../media/banana.png">
+            </label><br>
+            <label>
+            <input type="radio" name="china" value="3">
+            탕수육 <img src="../media/apple.png">
+            </label>
+            </form> 
+    
+
+            <input type="color" value="#00BFFF" onchange="document.body.style.color=this.value">
+
+
+            <a href="0323-1.html">test</a>
+</div>
+</body>
+</html>
