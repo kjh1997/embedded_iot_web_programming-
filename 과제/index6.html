@@ -5,11 +5,8 @@
    <h3>도형 서식 폼 만들기</h3>
     <hr>
 <form>
-    
- 
     <fieldset style="margin: 10px;">
                 <!-- fieldset이 너무 붙어있어 마진을 10px 줬음 -->
-
         <legend>도형 서식 입력</legend>
    `    <label style="margin: 5px;">선종류</label> <select name="" style="margin: 5px;">
         <option value="1">선없음</option>
@@ -17,27 +14,17 @@
         <option value="3" selected>점선</option>
         </select>
         <!-- 콤보박스를 만들어주고, 기본값으로 점선을 설정하였음. -->
-
         <br><br>
-
         <label style="margin: 5px;">선두께</label>
         <input type="number" min="0.0" max="10.0" step="0.5" value="5" >
         <!-- 최소:0, 최대:10,기본값이 없어서 중간값인 5로 설정했음.  -->
         <label style="margin-left: 5px;">선색 </label> 
-         
         <input type="color" value="#00BFFF"  style="margin: 5px;">
-            
             <br><br>
-
         <label style="margin: 5px;">투명도(0~100)</label><input type="range" min="0" max="100" style="margin: 5px;">
         <!-- 최소:0 최대:100 을 줬음. 타입을 range를 적용했음. -->
-        <!-- 모두 좀 깔끔하게 보이려고 margin을 줬음.  -->
-    
+        <!-- 모두 좀 깔끔하게 보이려고 margin을 줬음.  -->  
 </fieldset>
-
-
-
-
 </form>
 </body>
 </html>
