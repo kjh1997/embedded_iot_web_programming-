@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- html 문서 지정 -->
+<html>
+<head>
+<title>소프트웨어 설문지</title>
+<!-- 탭 이름 지정 -->
+<style>
+    form { background-color : mistyrose; }
+    /* form 의 백그라운드 컬러 지정 */
+    strong { color: blue;}
+</style>
+</head>
+
+<body>
+    <h2 style="text-align: center; color: red;">설문지</h2>
+    <h5 style="font-style : oblique;">소프트웨어 기술에 대한 의견을 묻습니다. 많은 참여 바랍니다.</h5>
+    <!--  폰트 스타일 지정 -->
+    <hr>
+
+<form style="margin: 10px;">
+    <ul style="list-style: none;">
+<li>
+    <strong>학년</strong>
+     <input type="radio" name="china" value="1">1학년
+     <input type="radio" name="china" value="2" >2학년
+     <input type="radio" name="china" value="3"> 3학년
+     <input type="radio" name="china" value="4" > 4학년
+     <!-- name이 같은 것 끼리 같은 radio로 인식해서 하나만 설정할 수 있음. -->
+
+</li>
+<br>
+<li>
+     <strong>성별</strong> 
+    <input type="radio" name="se" value="2" >남
+    <input type="radio" name="se" value="3">여
+ </li>
+    <!-- name이 같은 것 끼리 같은 radio로 인식해서 하나만 설정할 수 있음. -->
+<br>
+<li>
+   <strong>관심분야</strong>  
+<select name="career path">
+<option value="1">모바일 소프트웨어</option>
+<option value="2" selected>빅데이터</option>
+<option value="3">인공지능</option>
+<!-- 기본 선택을 빅데이터로 하였음. -->
+</select>
+</li>
+<br>
+<li> 
+   <strong>진로(다중 선택)</strong>  
+<input type="checkbox" name="a" value="2" >개발
+<input type="checkbox" name="a" value="3"> 기획
+<input type="checkbox" name="a" value="1" >  영업
+<input type="checkbox" name="a" value="4" >  창업
+<!-- 콤보박스 설정 -->
+
+</li>
+<br>
+<li>
+    <strong>남기고 싶은 말</strong> 
+</li>
+</ul>
+
+<textarea cols="30" rows="10" >글을 남겨주세요</textarea>
+<!-- 기본값을 "글을 남겨주세요"를 넣어주었음.  -->
+</form>
+<h5 style="border-radius : 50px; background : aqua;">Copyright 2022 by kjh</h5>
+
+</body>
+</html>

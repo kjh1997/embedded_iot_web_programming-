@@ -10,6 +10,7 @@
         background-image : url("../media/card1.jpg");
         size : 150px 200px;
     } 
+    /* 마우스 올라오면 card1을 보여줌 */
     div
     {
         width : 150px;
@@ -17,6 +18,7 @@
         background-image : url("../media/card2.png");
         background-size : 150px 200px;
     }
+    /* 마우스가 올라오지 않았을 경우에는 card2를 보여줌 */
     
         
     </style>
@@ -26,8 +28,11 @@
 <h3>:hover 활용</h3>
 <hr>
 <table>
-<tr><td>마우스를 올리면 카드의 앞면이 보인다.</td>
-    <td><div id="img"></div></td></tr>
+<tr>
+    <td>마우스를 올리면 카드의 앞면이 보인다.</td>
+    <td><div id="img"></div></td>
+</tr>
+<!--  다른 방법도 많은데, 저는 table 태그를 사용했습니다. -->
 </table>
 </body>
 </html>
