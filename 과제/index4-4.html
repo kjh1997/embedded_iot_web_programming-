@@ -5,19 +5,37 @@
 </head>
 <body>
 <script>
+    function printErr(){
+        document.write("입력 오류 입니다.")
+        // 입력값이 이상하면 입력 오류를 출력
+    }
+
     function printStar(){
         var a = "";
         for(i=0; i < b; i++){
         a += 'a'
         document.write(a + "<br>")
+
+            // 변수 하나를 만들고, 그 값에 for문이 돌아가면 a가 하나씩 붙게 설계하였음.
+        }
     }
-    }
+
     document.write("<h3>별 문자 출력하기 </h3>")
     document.write("<hr>")
     
     var b = prompt("정수를 입력하시오")
-    printStar(b)
-
+    var c= Number(b)
+    if( b != c ){
+        // 알고리즘 풀 때 제가 많이 사용하는 방식인데, 
+        // 실수형이나 str이 들어올 경우, 이 단계에서 걸리짐.
+        // 실수형에서 int로 바꾸면 5.9 >> 5가 되므로 else로 넘어감.
+        printErr()
+    } else{
+        printStar()
+         // 출력할 line의 수를 입력
+    // 사용자 정의 함수 실행. 여기서 b는 글로벌 변수이므로, 함수에 넣지 않아도 괜찮음.
+    // 물론 넣어줄 수 있는데, 넣지않았음.
+    }
 </script>
 </body>
 </html>
