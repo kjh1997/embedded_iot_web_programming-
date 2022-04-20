@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<style>
+</style>
+<script>
+    var book ={
+        "title":"자바스크립트",
+        "author":"유재수",
+        "price":"30000"
+    }
+    document.write(book['title'])
+
+    document.write("<hr>")
+    function book3 (){
+        this.title = "js2"
+    }
+    var book4 = new book3()
+    // document.write(book4[title])
+
+    document.write(book4.title)
+
+    var book5 = new Object()
+    book5.title = "김종훈"
+    document.write("<hr>")
+ 
+    document.write(book5.title)
+
+
+
+
+</script>
+
+
+</body>
+</html>
