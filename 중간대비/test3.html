@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+<script>
+    function std(name, subject){
+        this.name = name;
+        this.subject = subject
+        this.score = 0;
+        this.getScore = function(){
+            return this.score;
+        }
+        this.info = function(){
+            return "<br>이름"+this.name+"<br>과목 : "+this.subject + "<br>점수 : "+ this.score + "<br>끝<br>";
+            
+        }
+        
+        
+    }
+    var data = new Object();
+    data.info = "정보"
+</script>
+</head>
+
+<body>
+    <script>
+        a = new std("김종훈","자바");
+        b = new std("김종연","공무원");
+        c = new std("김종훈","자바");
+        if(a!=c){
+            document.write("다름!<br>")
+        }
+        a.score = 80;
+        document.write(data.info)
+        document.write(a.getScore())
+        document.write(a.info())
+        document.write(data.info)
+
+        // document.write(a.name)
+        // document.write(data)
+    </script>
+</body>
+</html>

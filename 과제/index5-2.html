@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>book 객체 만들기</title>
+</head>
+<body>
+<h3>book 객체 배열 만들기</h3>
+<hr>
+<script>
+var bookData = new Array();
+var cnt = 0
+var max_index =0
+for(i=0 ; i<5; i++)
+{
+    var input = prompt("콤마(,)로 분리하면서 첵제목 저자 가격순으로 입력");
+    var ar = input.split(",");
+    var book = new Object();
+    // python의 dict라 보면 쉬움. 오브젝트하나 만들어서 값 입력
+    book.title = ar[0];
+    book.author = ar[1];
+    book.price = ar[2];
+    
+    bookData[i] = book;
+    if (ar[2] > bookData[max_index].price){
+        max_index = i
+    }
+    // 현재 입력값과 max index의 price를 비교하여 max_index를 새로 산출
+    document.write(bookData[i].title + ", ");
+    document.write(bookData[i].author + ", ");
+    document.write(bookData[i].price + "<br>");
+    
+    // for문을 여러번 사용하면 느려서 for문 하나로 사용함. 
+}
+
+    document.write("<br>가장 가격이 비싼 책은 " + bookData[max_index].title);
+</script>
+</body>
+</html>
