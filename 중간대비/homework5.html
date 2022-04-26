@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head> <title>Document</title>
+    <style>
+   /* table{
+            border-collapse : collapse
+
+        }
+        thead{
+            background-color: brown;
+        }
+        tfoot{
+            background-color: darkgray;
+        }
+        td, th{
+            text-align: left;
+            font-size: 25px;
+            padding: 5px;
+            height: 20px;
+        }
+        tr:nth-child(even){
+            background-color: aqua;
+        }
+        tbody tr:hover{
+            background-color: red;
+        }
+        td, tfoot th {
+            border-bottom: 1px solid gray;
+        }
+        input:hover{
+            background: aliceblue;
+        }  */
+        table  td {
+            font-size: 25px;
+        }
+        @keyframes colorChange{
+            0% {color: blue;}
+            50% {color: brown;}
+            100% {color: red;}
+        }
+        span {
+            animation: colorChange;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes sizeChange{
+            0%{font-size: 50px;}
+            
+            100%{font-size: 1px;}
+        }
+        p {
+            animation: sizeChange;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        h2:hover{
+            font-size: 500%;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr><th>이름</th><th>HTML</th><th>CSS</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>김종훈</td><td>90</td><td>80</td></tr>
+            <tr><td>이재홍</td><td>80</td><td>70</td></tr>
+            <tr><td>김종훈</td><td>90</td><td>80</td></tr>
+            <tr><td>이재홍</td><td>80</td><td>70</td></tr>
+            <tr><td>김종훈</td><td>90</td><td>80</td></tr>
+            <tr><td>이재홍</td><td>80</td><td>70</td></tr>
+            <tr><td>김종훈</td><td>90</td><td>80</td></tr>
+            <tr><td>이재홍</td><td>80</td><td>70</td></tr>
+        </tbody>
+        <tfoot>
+            <tr><td>합계</td><td>170</td><td>150</td></tr>
+        </tfoot>
+    </table>
+    <label style="border-radius: 15px; background-color: aqua;">testestes</label>
+    <span>color test</span>
+    <p>font-size test</p>
+    <h3 style="font-size: 500%;">testest</h3>
+    <h2>test</h2>
+    <div style="transform: rotate(-20deg); background-color: aqua; display: inline-block;">test2</div>
+</body>
+</html>

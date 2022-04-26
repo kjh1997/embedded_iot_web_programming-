@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+        function testFc(a ,  b){
+            return a+b
+        }
+        a = [15,23,1,65,32,2]
+        for(var i=0; i<10;i++){
+            document.write("<br>"+i)
+            document.write(a[i])
+        }
+        for(var i=10; i>1;i--){
+            document.write("<br>"+i)
+
+            document.write(a[i])
+        }
+        document.write("<br>끝")
+        function randInt(){
+            return Math.randomInt()*9+10
+        }
+        while(true){
+            var b = Math.floor(Math.random()*100)+1
+            if(b >90 ){
+                break
+            }
+            document.write(b)
+        }
+        a = new Array()
+        a= ["월","화","수","목","금","토","일"]
+     
+        switch("금"){
+            case "월":
+                document.write(a[0])
+            case "화":
+            document.write(a[1])
+            case "수":
+            document.write(a[2])
+            case "목":
+            document.write(a[3])
+            case "금":
+            document.write(a[4])
+            case "토":
+            document.write(a[5])
+            case "일":
+            document.write(a[6])
+            default:
+            document.write(a[6])
+        }
+        document.write("<br>")
+        let c = 1
+        do {
+            document.write(c+"<br>")
+            c++
+            if(c%2==0){
+                continue
+            }
+        }while(c<30)
+        document.write(eval("1+2+4+5"))
+    </script>
+</body>
+</html>

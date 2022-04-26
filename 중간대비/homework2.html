@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+       <title>Document</title>
+</head>
+<style>
+    ul li {
+        list-style-type: none;
+    }
+    label.title {
+    margin: 5px;
+    width: 85px;
+    float: left;
+    font-weight: bold;
+  } 
+  input.data {
+    margin: 5px;
+  }
+  textarea{
+      margin: 5px;
+  }
+</style>
+<body>
+    <form>
+        <fieldset>
+            <legend>Login</legend>
+            <label >Username</label><input type="text">
+        </fieldset>
+    </form>
+    <form>
+        <fieldset>
+            <legend>주문 정보</legend>
+            <ul>
+                <li><input type="checkbox"><label>과테말라 구이</label><input type="text" value="0"><label>개</label></li>
+                <li><input type="checkbox"><label>과테말라 구이2</label><input type="text" value="0"><label>개</label></li>
+                <li><input type="checkbox"><label>과테말라 구이3</label><input type="text" value="0"><label>개</label></li>
+            </ul>
+        </fieldset>
+    </form>
+    <form>
+
+        <fieldset>
+            <legend>주문 정보</legend>
+            <ul>
+                <li>
+                    <label for="name" class="title" >이름</label>
+                  <input type="text" id="name" class="data" style="width:350px;"> 
+                </li>
+                <label for="name" class="title">연락처</label>
+                  <input type="text" id="mail" class="data">
+                  
+                  <li>
+                    <label for="name" class="title">메모</label>
+                    <textarea name="memo" cols="40" rows="4"></textarea>
+                  </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>
