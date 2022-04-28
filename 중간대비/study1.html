@@ -4,13 +4,43 @@
     <title>Document</title>
 </head>
 <style>
-    .test1 {
-        color: red;
-        background-color: darkgray;
-        margin: 10px;
+    #title {
+    margin: 5px;
+    width: 85px;
+    float: left;
+  } 
+    label.title {
+    margin: 5px;
+    width: 85px;
+    float: left;
+  } 
+  textarea {
+    margin: 5px;
+  }
+    li {
+        list-style-type: none;
+    }
+    input {
+        margin: 5px;
+    }
+    fieldset {
+        margin: 5px;
     }
 </style>
 <body>
-    <p class="test1">김종훈 테스트</p>
+
+<fieldset>
+<legend>test</legend>
+<ul>
+<li>
+<label id="title">789</label><input type="text">
+</li>
+<li>
+<label class="title">456</label><input type="text">
+</li>
+<li>
+<label class="title">123</label><textarea name="" id="" cols="30" rows="10"></textarea>
+</li></ul>
+</fieldset>
 </body>
 </html>

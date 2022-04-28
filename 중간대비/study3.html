@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<style>
+    #check{
+        list-style-type: none;
+        padding-left: 5px;
+    }
+    .radio{
+        list-style-type: circle;
+        background: red;
+        padding: 20px;
+    }
+</style>
+<body>
+
+<select>
+    <option value="">콤보1</option>
+    <option value="">콤보2</option>
+    <option value="" selected>콤보3</option>
+</select>
+<ul id="check">
+<li><input type="checkbox" value="1" ><label>체크1</label>
+</li>
+<li><input type="checkbox" value="1"><label>체크2</label>
+</li>
+<li><input type="checkbox" value="1"><label>체크3</label>
+</li>
+</ul>
+
+<ul class="radio">
+<li><input type="raido" value="1"><label>raido1</label>
+</li>
+<li><input type="raido" value="1"><label>raido2</label>
+</li>
+<li><input type="raido" value="1"><label>raido3</label>
+</li>
+</ul>
+
+<input type="color">
+<input type="range" list="temperatures" min="0" max="100 ">
+<datalist id="temperatures">
+<option value="10" label="Low"></option>
+<option value="50" label="Middle"></option>
+<option value="90" label="High"></option>
+
+</datalist>
+<input type="range" min="0" max="100" 
+list="temperatures">
+<datalist id="temperatures">
+<option value="10" label="Low">
+<option value="50" label="Medium">
+<option value="90" label="High">
+</datalist>
+
+</body>
+</html>

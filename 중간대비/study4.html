@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<style>
+    html, body{
+        margin : 0;
+	padding : 0;
+	height: 100%;
+    }
+    /* div{
+        display: inline-block;
+        box-shadow:10px 10px 5px blue;
+        background: url("../media/card1.jpg") no-repeat;
+        width: 200px;
+        height:  150px;
+        margin: 15px;
+        padding: 10px;
+        border: solid 1px;
+
+    } */
+    #absolute {
+        width: 100%;
+        position: absolute; bottom: 0;
+        background: skyblue;
+        color: red;
+        margin: 0;
+    }
+    @keyframes test{
+        0% { background-color: red; }
+        50% { background-color: YELLOW; }
+        100% { background-color: darkblue; }
+    }
+    #pos:hover{
+        animation: test;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        position: relative;
+        left: 30px;
+        top: 30px;
+        box-shadow: 5px 5px blue;
+        background: aliceblue;        
+    }
+    @keyframes moving{
+        0%{  margin-top: 100%;}
+        50%{ margin-top: 0%; }
+        100%{  margin-top:100%; }
+
+    }
+    .ani {
+        animation : moving;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        background-color: aqua;
+        width: 100px;
+        height: 150px;
+    }
+</style>
+<body>
+    <div>
+        <p>test</p>
+    </div>
+    <p id="absolute">absolute</p>
+    <div id="pos" width="50px" height="50px" style="background-color: skyblue; display: inline-block;">
+        <p>position</p>
+    </div>
+    <div class="ani">
+        <img src="../media/apple.png" alt="">
+    </div>
+</body>
+</html>
