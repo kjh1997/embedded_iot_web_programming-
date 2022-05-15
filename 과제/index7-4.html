@@ -4,10 +4,14 @@
 <title>자바스크립트 연습</title>
 <script>
 window.ondblclick = function(e) {
+    // 화면을 더블 클릭 시 발동하는 이벤트 정의
     var r = Math.floor(Math.random()*256);
     var g = Math.floor(Math.random()*256);
     var b = Math.floor(Math.random()*256);
+    // 더블 클릭 시 랜덤으로 값을 가지고 옴.
+    // rgb 3가지 색상의 조합으로 백그라운드 컬러가 정의됨.
     document.body.style.backgroundColor = 
+    // 색상 적용
         "rgb("+ r + "," + g + "," + b +")";
 }
 </script>
@@ -20,3 +24,4 @@ window.ondblclick = function(e) {
 </p>
 </body>
 </html>
+

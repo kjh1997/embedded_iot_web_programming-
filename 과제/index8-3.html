@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- 브라우저 너비를 장치 너비에 맞춰 표시해줌. -->
+    <!-- 초기 화면 비율 지정 -->
+    <title>Cafe</title>
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+        /* 웹 폰트 적용 */
+        @import url(https://fonts.googleapis.com/css?family=Oleo+Script);
+        /* 폰트적용을 위한 스크립트 적용 */
+
+
+        * {
+            margin:0;
+            padding:0;
+        }
+        /* 브라우저마다 default padding 값과, default margin 값이 다 다르다.
+        그렇기 때문에 내가 설정한 CSS가 모든 브라우저에서 동일하게 보이게 하기 위해
+        padding과 margin 값을 0으로 초기화 하는 것이다. 이렇게 0으로 초기화 한 후 
+        다시 padding 값과 margin 값을 설정하면 어느 브라우저에서 보이더라도 동일하게 보일 수 있다. */
+        body {
+            background: #fff;
+            font-family: "Jeju Gothic", serif;
+            /* 폰트 적용 */
+        }
+        a {
+            text-decoration: none;
+        }
+        nav a:link, a:visited {
+            color: #fff;
+        }
+        nav a:active {
+            color: yellow;
+        }
+        h1 {
+            font-size: 1.8em;
+        }
+        h2 {
+            font-size: 1.3em;
+        }
+        p {
+            font-size: 1.3em;
+            line-height: 2.5;
+        }
+        li {
+            font-size: 1em;
+            line-height: 2;
+        }
+
+        /* 모바일 - 767px 이하 */
+        /* ~767px, 768~992px, 992~ 3가지로 분기함.*/
+        #container {
+            /* id셀렉터 */
+            width: 100%;
+            /* 여기선 폭을 100%로 설정해줬음. */
+            margin: 0 auto;
+        }
+        header {
+            width: 100%;
+            height: 300px;
+            background: url(../media/header.jpg) center no-repeat;
+            background-size: cover;
+            margin: 0;
+        }
+        /* 헤더의 이미지는 계속 표시함. */
+        nav {
+            height: 50px;
+            background: #000;
+        }
+        #main-nav {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+        }
+        #main-nav li {
+            display: inline-block;
+            color: #fff;
+            font-family: "맑은 고딕", 돋움;
+            font-size: 0.8em;
+            margin: 5px 15px;
+        }
+        section {
+            position: relative;
+            width: 100%;
+            padding: 15px 5% 10px 5%;
+        }
+        #container section:nth-child(odd) {
+            /*  */
+            background: #eee;
+        }
+        .page-title {
+            /* class셀렉터 */
+            position: absolute;
+            top: 20px;
+            left: 0;
+            padding: 30px 50px;
+        }
+        .page-title h1 {
+            margin-bottom: 30px;
+        }
+        .content {
+            margin: 80px auto 10px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 90%;
+            padding: 20px;
+        }
+        .content ol {
+            margin-top: 20px;
+        }
+        .sub-titles {
+            color: #0094ff;
+            font-weight: 600;
+        }
+        .photo {
+            display: none;
+        }
+        footer {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            background: #000;
+        }
+        footer p {
+            font-family: 'Oleo Script', cursive;
+            font-size: 1.5em;
+            line-height: 100px;
+            color: white;
+            text-align: center;
+        }
+
+        /* 태블릿 - 768px 이상 */
+        @media screen and (min-width:768px) {
+            /* https://naradesign.github.io/media-query.html
+            출력 장치의 여러 특징 가운데 일부를 참조하여 CSS 코드를 분기 처리함으로써
+             하나의 HTML 소스가 여러가지 뷰를 갖도록 구현할 수 있는 명세이다. 일반적으로 뷰포트 해상도에 따라 CSS 코드를 분기한다.
+             아예 따로 동작함.
+             @media를 사용해 미디어 쿼리를 지정하면 "해당 쿼리"를 만족하는 장치에서만 CSS 블록을 적용
+            */
+            header {
+                height: 400px;
+            }
+            #intro, #map {
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                width: 50%;
+                height: 400px;
+                float: left;
+                margin: 0;
+                border: 1px dotted #ccc;
+            }
+            #choice {
+                clear: left;
+            }
+        }
+
+        /* PC - 992px 이상 */
+        @media screen and (min-width:992px) {
+            /* 최소 넓이가 992px가 되었을 경우 이 css를 적용함. */
+            #container {
+                /* 992px이 되면 폭이 995px로 고정됨. */
+                width: 995px;
+                margin: 0 auto;
+                border: 1px solid #ccc;
+            }
+            header {
+                height: 500px;
+            }
+            #intro, #map, #choice {
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                /* border와 padding을 모두 포함한 영역을 기준으로 박스 사이즈가 결정된다 */
+                clear: both;
+                position: relative;
+                width: 100%;
+                height: 420px;
+                padding: 15px 2% 10px 5%;
+            }
+            .content {
+                margin: 80px auto 10px;
+                width: 90%;
+                padding: 20px;
+            }
+            .photo {
+                width: 42%;
+                display: block;
+            }
+            .photo > img {
+                width: 100%;
+                max-width: 320px;
+                height: auto;
+                margin-bottom: 30px;
+            }
+            /* 992px 이상이면 photo 태그의 이미지가 표시됨. */
+            .text {
+                width: 42%;
+            }
+            #intro .photo, #map .photo {
+                float: left;
+                margin-right: 5%;
+            }
+            #intro .text, #map .text {
+                float: left;
+            }
+            #choice .photo {
+                float: right;
+                margin-right: 5%;
+            }
+            #choice .text {
+                float: left;
+            }
+            footer {
+                clear: both;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <ul id="main-nav">
+                    <li><a href="#intro">카페 소개</a></li>
+                    <li><a href="#map">오시는 길</a></li>
+                    <li><a href="#choice">이 달의 추천</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="intro">
+            <div class="page-title">
+                <h1>카페 소개</h1>
+            </div>
+            <div class="content">
+                <div class="photo">
+                    <img src="../media/coffee.jpg" alt="">
+                </div>
+                <div class="text">
+                    <p> 영업 시간 : 오전 9시 ~ 밤 10시 </p>
+                    <p> 휴무 : 매주 수요일 (<i><small>수요일이 공휴일일 경우 수요일 영업, 다음날 휴무</small></i>)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="map">
+            <div class="page-title">
+                <h1>오시는 길</h1>
+            </div>
+            <div class="content">
+                <div class="photo">
+                    <img src="../media/map.jpg" alt="사계 포구에서 서쪽 방향으로 000미터 진행">
+                </div>
+                <div class="text">
+                    <p>서귀포시 안덕면 사계리 oooo-ooo</p>
+                    <p>제주 올레 10코스 산방산 근처</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="choice">
+            <div class="page-title">
+                <h1>이 달의 추천 </h1>
+            </div>
+            <div class="content">
+                <div class="photo">
+                    <img src="../media/ice.jpg" alt="아이스 커피" style="border:1px solid white; border-radius:50%">
+                </div>
+                <div class="text">
+                    <h2>핸드드립 아이스커피</h2>
+                    <ol>
+                        <li>1인분 기준으로 서버에 각얼음 5조각(한조각의 20cc) 넣고 추출을 시작한다.</li>
+                        <li>평상시 보다 원두의 양은 2배 정도 (20g)와 추출액은 얼음 포함해서 200cc까지 내린다.</li>
+                        <li>아이스 잔에 얼음 6~7개 섞어서 시원하게 마신다</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>My times with Coffee</p>
+        </footer>
+    </div>
+</body>
+</html>
