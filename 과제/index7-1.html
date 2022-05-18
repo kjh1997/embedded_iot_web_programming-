@@ -1,38 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>visibility로 텍스트 숨기기</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
     <style>
-        span {
-            visibility: hidden;
-            color: blue;
-        }
+    span { visibility: hidden;
+            color: blue;}
     </style>
     <script>
         function change() {
+            // 함수 생성
             var spanArray=document.getElementsByTagName("span");
+            // 모든 span태그들을 가지고 옴
             for(var i=0 ; i<spanArray.length ; ++i) {
                 var span=spanArray[i];
                 var style=window.getComputedStyle(span);
                 var value=style.getPropertyValue("visibility");
+                // span태그의 css 상태를 넣어줌
                 if(value == "hidden") {
+                    // span태그가 hidden이면 visible로 바꿈
                     span.style.visibility = "visible";
                 }
                 else {
-                span.style.visibility="hidden";
-                }
-            }
-        }
+                    span.style.visibility="hidden";
+                }} }
     </script>
 </head>
 <body>
 <h3>다음 빈 곳에 숨은 단어?
     <button onclick="change()">show/hide</button>
+    <!-- 버튼을 만들고 함수를 사용함. -->
 </h3>
 <hr>
 <ul>

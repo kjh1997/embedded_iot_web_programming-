@@ -7,6 +7,7 @@ img
 {
     width: 30px;
     height: 30px;
+    /* 이미지 크기 지정 */
 }   
 </style>
 </head>
@@ -15,12 +16,17 @@ img
 <hr>
 마우스를 움직이면 이미지로 만든 커서가 마우스를 따라 다닙니다.
 <img id="img" style="position: absolute" src="../media/card1.jpg">
+
 <script>
 var img = document.getElementById("img");
+// 객체의 id가 img인 것을 가지고 옴.
 window.onmousemove = function(e) 
+// 마우스가 동작함.
 {
+    // 마우스가 움직이는 이벤트시 적용함. 
     img.style.left = e.clientX + "px";
-    img.style.top = e.clientY + "px"; 
+    img.style.top = e.clientY + "px";
+    // 이미지의 css를 사용해서 위지를 조정함. 
 }
 </script>
 </body>
