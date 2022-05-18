@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>testKJH</name>
+	<name>tutorial</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -28,14 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<filteredResources>
-		<filter>
-			<id>1652857144291</id>
-			<name></name>
-			<type>9</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.andFilterMatcher</id>
-			</matcher>
-		</filter>
-	</filteredResources>
 </projectDescription>
