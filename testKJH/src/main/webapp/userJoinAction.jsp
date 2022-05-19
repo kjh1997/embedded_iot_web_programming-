@@ -17,13 +17,13 @@
 		userPW=(String) request.getParameter("userPW");
 	}
 	if (request.getParameter("userPW2")!= null){
-		userPW2=(String) request.getParameter("userPW2");
+		userPW2= (String) request.getParameter("userPW2");
 	}
 	if (request.getParameter("userPN")!= null){
-		userPN=(String) request.getParameter("userPN");
+		userPN= (String) request.getParameter("userPN");
 	}
 	System.out.println(userID+ "|"  +userPN+ "|" +userPW2+ "|" +userPW);
-	if (userID == null || userPW == null || userPN == null || userPW2 == null){
+	if ((userID == null) || (userPW == null) || (userPN == null) || (userPW2 == null)){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('입력이 안 된 사항이 있습니다.')");
@@ -32,10 +32,14 @@
 		script.close();
 		return;
 	}
-	if(userPW != userPW2){
+	System.out.println(userID+ "||"  +userPN+ "||" +userPW2+ "||" +userPW);
+	if ( userPW.equals(userPW2) != true){
+		System.out.println(userPW);
+		System.out.println(userPW2);
+
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("alert('비밀번호가 다릅니다..')");
+		script.println("alert('비밀번호가 다릅니다123..')");
 		script.println("history.back()");
 		script.println("</script>");
 		script.close();
