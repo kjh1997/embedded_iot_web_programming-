@@ -39,7 +39,7 @@
 
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("alert('비밀번호가 다릅니다123..')");
+		script.println("alert('비밀번호가 다릅니다123.')");
 		script.println("history.back()");
 		script.println("</script>");
 		script.close();

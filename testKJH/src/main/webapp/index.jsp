@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">╟За╕ ©╛╫ю</a>
+    <a class="navbar-brand" href="#">ЙЁ╪Л═° Л≈╟Л┼╣</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,22 +33,23 @@
       </ul>
       <div style="float: right">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="./login.jsp">╥н╠вюн</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="./joinform.jsp">х╦©Ь ╟║ют</a>
-      </li>
+      <% String id = (String)session.getAttribute("id"); %>
+
+      <% if(id!=null){ %>
+      <li class="nav-item"><a class="nav-link active" aria-current="page"><%=id %>К▀≤</a> </li>
+      <li class="nav-item"><a class="nav-link active" aria-current="page" href="./userLogoutAction.jsp">К║°Й╥╦Л∙└Л⌡┐</a>	</li>	<%
+		}else if(id==null){
+		%>
+		<li class="nav-item"><a class="nav-link active" aria-current="page" href="./login.jsp">К║°Й╥╦Л²╦</a>	</li>
+		<li class="nav-item"><a class="nav-link active" aria-current="page" href="./joinform.jsp">М ▄Л⌡░Й╟─Л·┘</a>	</li>	<% 
+	}	
+	%>
+      
       </ul>
       </div>
     </div>
   </div>
 </nav>
-<form action="./userJoinAction.jsp">
-<input type="text" name="userID">
-<input type="password" name="userPW">
-<button type="submit">ют╥б юЭ╪ш</button>
-</form>
 
 </body>
 </html>

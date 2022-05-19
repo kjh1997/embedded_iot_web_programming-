@@ -1,42 +1,52 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="user.UserDTO" %>
 <%@ page import="user.UserDAO" %>
 <%@ page import="java.io.PrintWriter" %>
-<%@ page import="javax.servlet.http.HttpSession" %>
 
 <%
 	request.setCharacterEncoding("UTF-8");
 	String userID = null;
 	String userPW = null;
-	if (request.getParameter("userID")){
+	Boolean result;
+	if (request.getParameter("userID") != null){
 		userID=(String) request.getParameter("userID");
 	}
-	if (request.getParameter("userPW")){
+	if (request.getParameter("userPW") != null){
 		userPW=(String) request.getParameter("userPW");
 	}
 	if ((userID== null) || (userPW==null)){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("alert('ÀÔ·ÂÀÌ ¾È µÈ »çÇ×ÀÌ ÀÖ½À´Ï´Ù.')");
+		script.println("alert('ì…ë ¥ì´ ì•ˆ ëœ ì‚¬í•­ì´ ìˆìŠµë‹ˆë‹¤.')");
 		script.println("history.back()");
 		script.println("<script>");
 		script.close();
 		return;
 	}
 	UserDAO dao = new UserDAO();
-	int result = dao.login(userID, userPW);
-	if (result == 1){
+	System.out.println(userID+ "|" +userPW);
+
+	result = dao.login(userID, userPW);
+	System.out.println(result);
+	if (result == true){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("alert('·Î±×ÀÎ ¼º°ø!!')");
+		script.println("alert('ë¡œê·¸ì¸ ì„±ê³µ!!')");
 		session.setAttribute("login",1);
 		session.setAttribute("id",userID);
-		script.println("location.href = 'index.jsp");
+		script.println("location.href = 'index.jsp';");
 		script.println("</script>");
+		System.out.println(result);
+
+		return;
+	} else if(result != true){
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('ì¼ì¹˜í•˜ëŠ” ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.')");
+		script.println("history.back()");
+		script.println("</script>");
+		script.close();
 		return;
 	}
-	
-	
-	
 %>
