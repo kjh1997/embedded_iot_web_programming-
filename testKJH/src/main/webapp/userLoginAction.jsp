@@ -19,10 +19,7 @@
 		return;
 	}
 	UserDAO dao = new UserDAO();
-	System.out.println(user.getUserID()+ "|" +user.getUserPW());
-	
 	result = dao.login(user.getUserID(), user.getUserPW());
-	System.out.println(result);
 	
 	if (result == true){
 		PrintWriter script = response.getWriter();
@@ -33,6 +30,7 @@
 		script.println("location.href = 'index.jsp';");
 		script.println("</script>");
 		System.out.println(result);
+		script.close();
 		return;
 	} else if(result != true){
 		PrintWriter script = response.getWriter();

@@ -1,22 +1,30 @@
 package board;
 
 public class BoardDTO {
+	private int bid;
 	private String title;
 	private String contents;
 	private String datetime;
 	private String user;
 	private int alive;
+	
+	public void setBid(int bid) {
+		this.bid = bid;
+	}
+	public int getBid() {
+		return bid;
+	}
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContext() {
+	public String getContents() {
 		return contents;
 	}
-	public void setContext(String context) {
-		this.contents = context;
+	public void setContents(String contents) {
+		this.contents = contents;
 	}
 	public String getDatetime() {
 		return datetime;

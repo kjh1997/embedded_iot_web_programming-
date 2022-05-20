@@ -24,7 +24,7 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./createBoard.jsp">게시판</a>
+          <a class="nav-link" href="./boardView.jsp">게시판</a>
         </li>
         
         <li class="nav-item">
