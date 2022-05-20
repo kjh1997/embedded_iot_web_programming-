@@ -1,21 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="user" class="user.UserDTO" scope="page"/>
+<jsp:setProperty name="user" property="*"/>
 <%@ page import="user.UserDTO" %>
 <%@ page import="user.UserDAO" %>
 <%@ page import="java.io.PrintWriter" %>
 
 <%
 	request.setCharacterEncoding("UTF-8");
-	String userID = null;
-	String userPW = null;
 	Boolean result;
-	if (request.getParameter("userID") != null){
-		userID=(String) request.getParameter("userID");
-	}
-	if (request.getParameter("userPW") != null){
-		userPW=(String) request.getParameter("userPW");
-	}
-	if ((userID== null) || (userPW==null)){
+	if ((user.getUserID()== null) || (user.getUserPW()==null)){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('입력이 안 된 사항이 있습니다.')");
@@ -25,20 +19,20 @@
 		return;
 	}
 	UserDAO dao = new UserDAO();
-	System.out.println(userID+ "|" +userPW);
-
-	result = dao.login(userID, userPW);
+	System.out.println(user.getUserID()+ "|" +user.getUserPW());
+	
+	result = dao.login(user.getUserID(), user.getUserPW());
 	System.out.println(result);
+	
 	if (result == true){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('로그인 성공!!')");
 		session.setAttribute("login",1);
-		session.setAttribute("id",userID);
+		session.setAttribute("id",user.getUserID());
 		script.println("location.href = 'index.jsp';");
 		script.println("</script>");
 		System.out.println(result);
-
 		return;
 	} else if(result != true){
 		PrintWriter script = response.getWriter();

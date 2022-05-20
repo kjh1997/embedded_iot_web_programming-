@@ -1,21 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>How To Create Simple Login Form Design In Bootstrap 5</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
-</head>
+<%@ include file="navbar.jsp" %>
 <body>
 
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 <div class="login-form bg-light mt-4 p-4">
-                    <form action="./userLoginAction.jsp" class="row g-3">
+                    <form action="./beantest.jsp" class="row g-3">
                         <h4>Welcome Back</h4>
                         <div class="col-12">
                             <label>ID</label>
