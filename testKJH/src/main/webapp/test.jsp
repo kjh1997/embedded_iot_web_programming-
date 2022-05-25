@@ -24,7 +24,7 @@ ArrayList<BoardDTO> arrayData = test.getBoard();
 </ul>
 <%-- JSP 페이지에서 출력합니다. --%>
 <c:forEach var="arrayData" items="${arrayData}">
-    <p><c:out value="${arrayData.getTitle()}" />123</p>
+    <p><c:out value="${arrayData.getTitle()}" /></p>
 </c:forEach>
 
 

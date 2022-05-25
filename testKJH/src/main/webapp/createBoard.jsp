@@ -1,4 +1,6 @@
 <%@ include file="navbar.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 	<article>
 		<div class="container" role="main">
 			<h2>글 작성</h2>
@@ -11,7 +13,7 @@
 					<label for="content">Content</label>
 					<textarea class="form-control" rows="5" name="contents" placeholder="Input Content" ></textarea>
 				</div>
-				<button type="submit" class="btn btn-dark float-end">Save</button>
+				<label>직업 분류 선택</label>
 				<select name="Class" >
 				    <option value="none">=== 선택 ===</option>
 				    <option value="data">데이터 엔지니어</option>
@@ -19,10 +21,13 @@
 				    <option value="bankend">백엔드 개발자</option>
 				    <option value="frontend">프론트 개발자</option>
 				    <option value="ios">IOS 개발자</option>
-			  </select>
+			 	</select>
+				<a href="./boardView.jsp"><button type="button" class="btn btn-blue float-end" style="background : #00F5FF">목록</button></a>
+			 	
+				<button type="submit" class="btn btn-dark float-end">Save</button>
+				
 			</form>
 			<div >
-				<button type="button" class="btn btn-sm btn-primary" id="btnList">List</button>
 			</div>
 		</div>
 	</article>
