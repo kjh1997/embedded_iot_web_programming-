@@ -10,9 +10,9 @@
 <%@ page import="java.time.LocalDate" %>
 <%
  	BoardDAO dao = new BoardDAO();
-	request.setCharacterEncoding("UTF-8");
-	System.out.println("Title : " +board.getTitle());
-	System.out.println("Context : " + board.getContents());
+	request.setCharacterEncoding("utf-8");
+	System.out.println(board.getTitle() + board.getContents() );
+	System.out.println("id : " +session.getAttribute("id"));
 	System.out.println("id : " +session.getAttribute("id"));
 	LocalDate now = LocalDate.now();
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
@@ -27,7 +27,7 @@
 	PrintWriter script = response.getWriter();
 	script.println("<script>");
 	script.println("alert('작성완료')");
-	script.println("location.href = 'index.jsp';;");
+	script.println("location.href = 'boardView.jsp';");
 	script.println("</script>");
 	script.close();
 	return;

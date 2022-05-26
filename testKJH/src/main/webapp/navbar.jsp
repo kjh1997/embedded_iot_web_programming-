@@ -7,21 +7,20 @@
 <script src="./js/jquery.min.js"></script>
 <script src="bootstrap.min.js"></script>
 <script src="popper.js"></script>
-
 <meta charset="UTF-8">
 <title>base</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">과제 연습</a>
+    <a class="navbar-brand" href="./index.jsp">과제 연습</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="./index.jsp">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./boardView.jsp">게시판</a>

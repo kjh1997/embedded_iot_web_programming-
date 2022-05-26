@@ -50,14 +50,14 @@ public class BoardDAO {
 	
 	
 	public ArrayList<BoardDTO> getBoard() {
-		String sql = "select * from board where boardid < ? and alive = 1 order by boardid desc limit 10";
+		String sql = "select * from board where boardid < ? and alive = 1 order by boardid desc";
 		ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
 		try {
 			Connection conn = DatabaseUtil.getConnection();
 			PreparedStatement pstmt = null;
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, 10);
+			pstmt.setInt(1, 100000);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				BoardDTO data = new BoardDTO();
