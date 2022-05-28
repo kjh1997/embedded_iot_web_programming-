@@ -1,4 +1,4 @@
-package board;
+  package board;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,8 @@ import util.DatabaseUtil;
 
 public class BoardDAO {
 	private ResultSet rs;
-	public int createBoard(String title, String contents, String userID, String datetime, int alive) {
-		String sql = "INSERT INTO board VALUES (?, ?, ?, ?, ?,?)";
+	public int createBoard(String title, String contents, String userID, String datetime, int alive, String type) {
+		String sql = "INSERT INTO board VALUES (?, ?, ?, ?, ?,?,?)";
 		try {
 			Connection conn = DatabaseUtil.getConnection();
 			PreparedStatement pstmt = null;
@@ -22,6 +22,7 @@ public class BoardDAO {
 			pstmt.setString(4,datetime);
 			pstmt.setInt(5,alive);
 			pstmt.setString(6,userID);
+			pstmt.setString(7,type);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -67,6 +68,7 @@ public class BoardDAO {
 				data.setDatetime(rs.getString(4));
 				data.setAlive(rs.getInt(5));
 				data.setUser(rs.getString(6));
+				data.setType(rs.getString(7));
 				System.out.println(data);
 				list.add(data);
 			}

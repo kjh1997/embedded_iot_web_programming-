@@ -10,20 +10,17 @@
 <%@ page import="java.time.LocalDate" %>
 <%
  	BoardDAO dao = new BoardDAO();
-	request.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("utf8");
 	System.out.println(board.getTitle() + board.getContents() );
-	System.out.println("id : " +session.getAttribute("id"));
-	System.out.println("id : " +session.getAttribute("id"));
 	LocalDate now = LocalDate.now();
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
 	String formattedString = now.format(formatter);
 	System.out.println("date : "+ now);
 	int alive = 1;
 	String id = (String)session.getAttribute("id");
-	System.out.print(dao.createBoard(board.getTitle(), board.getContents(),id, formattedString , alive));
+	System.out.println(board.getType() + board.getTitle());
+	System.out.print(dao.createBoard(board.getTitle(), board.getContents(),id, formattedString , alive, board.getType()));
 
-	
-	
 	PrintWriter script = response.getWriter();
 	script.println("<script>");
 	script.println("alert('작성완료')");

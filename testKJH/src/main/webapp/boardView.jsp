@@ -8,7 +8,11 @@
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.time.LocalDate" %>
 <%@ page import="java.util.ArrayList" %>
-
+<style>
+	tr:nth-child(even){
+		background-color: #CFF;
+	}
+</style>
 <%
 BoardDAO test = new BoardDAO();
 ArrayList<BoardDTO> list = test.getBoard();
@@ -26,12 +30,13 @@ request.setCharacterEncoding("UTF-8");
 <form role="form" method="get">
 <table class="table table-hover" style="border:solid">
 <thead>
-	<tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th></tr>
+	<tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>유형</th></tr>
 </thead>
 	<% for(int i = 0 ; i < list.size(); i++){ %>
 		<tr><td><%=list.get(i).getBid()%></td><td><%=list.get(i).getTitle()%></td>
-		<td><%=list.get(i).getUser()%></td><td><%=list.get(i).getDatetime()%></td></tr>
-<%} %>
+		<td><%=list.get(i).getUser()%></td><td><%=list.get(i).getDatetime()%></td>
+		<td><%=list.get(i).getType()%></td></tr>
+	<%} %>
 </table>
 </form>
 </section>

@@ -7,6 +7,15 @@ public class BoardDTO {
 	private String datetime;
 	private String user;
 	private int alive;
+	private String type;
+	
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	public String getType() {
+		return type;
+	}
 	
 	public void setBid(int bid) {
 		this.bid = bid;
