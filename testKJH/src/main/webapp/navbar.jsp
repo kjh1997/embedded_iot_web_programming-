@@ -11,9 +11,9 @@
 <title>base</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light border:1px solid">
   <div class="container-fluid">
-    <a class="navbar-brand" href="./index.jsp">과제 연습</a>
+    <a class="navbar-brand" href="./index.jsp">Job Search</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,9 +26,6 @@
           <a class="nav-link" href="./boardView.jsp">게시판</a>
         </li>
         
-        <li class="nav-item">
-          <a class="nav-link active">Disabled</a>
-        </li>
       </ul>
       <div style="float: right">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">

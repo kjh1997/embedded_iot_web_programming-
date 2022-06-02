@@ -1,4 +1,4 @@
-  package board;
+package board;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,8 @@ import util.DatabaseUtil;
 
 public class BoardDAO {
 	private ResultSet rs;
-	public int createBoard(String title, String contents, String userID, String datetime, int alive, String type) {
-		String sql = "INSERT INTO board VALUES (?, ?, ?, ?, ?,?,?)";
+	public int createBoard(String title, String contents, String userID, String datetime, int alive, String type, String pn) {
+		String sql = "INSERT INTO board VALUES (?, ?, ?, ?, ?,?,?,?)";
 		try {
 			Connection conn = DatabaseUtil.getConnection();
 			PreparedStatement pstmt = null;
@@ -23,6 +23,7 @@ public class BoardDAO {
 			pstmt.setInt(5,alive);
 			pstmt.setString(6,userID);
 			pstmt.setString(7,type);
+			pstmt.setString(8,pn);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -47,6 +48,37 @@ public class BoardDAO {
 		}
 		System.out.println("test??");
 		return -1;
+	}
+	public BoardDTO getBoardOne(String bid) {
+		String sql = "select * from board where boardid = ?";
+		
+		try {
+			Connection conn = DatabaseUtil.getConnection();
+			PreparedStatement pstmt = null;
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bid);
+			rs = pstmt.executeQuery();
+			BoardDTO data = new BoardDTO();
+			while(rs.next()) {
+				
+				data.setBid(rs.getInt(1));
+				data.setTitle(rs.getString(2));
+				data.setContents(rs.getString(3));
+				data.setDatetime(rs.getString(4));
+				data.setAlive(rs.getInt(5));
+				data.setUser(rs.getString(6));
+				data.setType(rs.getString(7));
+				data.setPn(rs.getString(8));
+				System.out.println(data);
+				
+			}
+			return data;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("test??");
+		return null;
 	}
 	
 	

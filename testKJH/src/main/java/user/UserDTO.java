@@ -4,6 +4,8 @@ package user;
 public class UserDTO {
 //	DATA Transfer object
 	String userID;
+	String userPW;
+	String userPN;
 	public String getUserID() {
 		return userID;
 	}
@@ -22,7 +24,6 @@ public class UserDTO {
 	public void setUserPN(String userPN) {
 		this.userPN = userPN;
 	}
-	String userPW;
-	String userPN;
+	
 	
 }

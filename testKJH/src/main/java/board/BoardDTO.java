@@ -8,6 +8,17 @@ public class BoardDTO {
 	private String user;
 	private int alive;
 	private String type;
+	private String pn;
+	
+	public void setPn(String pn) {
+		System.out.print("???"+pn);
+		this.pn = pn;
+	}
+	
+	public String getPn() {
+		System.out.print("???123"+pn);
+		return pn;
+	}
 	
 	public void setType(String type) {
 		this.type = type;

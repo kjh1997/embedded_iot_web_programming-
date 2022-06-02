@@ -19,17 +19,18 @@
 		return;
 	}
 	UserDAO dao = new UserDAO();
+	System.out.println(user.getUserPN());
 	result = dao.login(user.getUserID(), user.getUserPW());
-	
+
 	if (result == true){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("alert('로그인 성공!!')");
-		session.setAttribute("login",1);
+		session.setAttribute("login",1);		
+		script.println("alert('로그인 성공!')");
 		session.setAttribute("id",user.getUserID());
+		System.out.println(user.getUserPN());
 		script.println("location.href = 'index.jsp';");
 		script.println("</script>");
-		System.out.println(result);
 		script.close();
 		return;
 	} else if(result != true){
