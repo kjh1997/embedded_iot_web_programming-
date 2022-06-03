@@ -15,8 +15,8 @@
 	}
 </style>
 <%
-BoardDAO test = new BoardDAO();
-ArrayList<BoardDTO> list = test.getBoard();
+BoardDAO dao = new BoardDAO();
+ArrayList<BoardDTO> list = dao.getBoard();
 request.setCharacterEncoding("UTF-8");
 %>
 <meta charset="UTF-8">
