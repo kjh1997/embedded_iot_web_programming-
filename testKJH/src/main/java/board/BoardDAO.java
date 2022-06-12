@@ -9,8 +9,29 @@ import util.DatabaseUtil;
 
 public class BoardDAO {
 	private ResultSet rs;
-	public int createBoard(String title, String contents, String userID, String datetime, int alive, String type, String pn) {
-		String sql = "INSERT INTO board VALUES (?, ?, ?, ?, ?,?,?,?)";
+	
+	public int modifyBoard(String title, String contents, String type, String pn, String contentType, String bid) {
+		String sql = "UPDATE board SET title = ?, context = ?, type = ?, contentType = ?, "
+				+ "pnum = ? WHERE boardid = "+bid;
+		try {
+			Connection conn = DatabaseUtil.getConnection();
+			PreparedStatement pstmt = null;
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,title);
+			pstmt.setString(2,contents);
+			pstmt.setString(3,type);
+			pstmt.setString(4,contentType);
+			pstmt.setString(5, pn);
+			System.out.println("수정 테스트");
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	public int createBoard(String title, String contents, String userID, String datetime, int alive, String type, String pn, String contentType) {
+		String sql = "INSERT INTO board VALUES (?, ?, ?, ?, ?,?,?,?,?)";
 		try {
 			Connection conn = DatabaseUtil.getConnection();
 			PreparedStatement pstmt = null;
@@ -24,6 +45,7 @@ public class BoardDAO {
 			pstmt.setString(6,userID);
 			pstmt.setString(7,type);
 			pstmt.setString(8,pn);
+			pstmt.setString(9, contentType);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -46,7 +68,6 @@ public class BoardDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("test??");
 		return -1;
 	}
 	public BoardDTO getBoardOne(String bid) {
@@ -69,7 +90,6 @@ public class BoardDAO {
 				data.setUser(rs.getString(6));
 				data.setType(rs.getString(7));
 				data.setPn(rs.getString(8));
-				System.out.println(data);
 				
 			}
 			return data;
@@ -77,13 +97,12 @@ public class BoardDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("test??");
 		return null;
 	}
 	
 	
 	public ArrayList<BoardDTO> getBoard() {
-		String sql = "select * from board where boardid < ? and alive = 1 order by boardid desc";
+		String sql = "select * from board where boardid < ? and alive = 1 and contentType = 'job' order by boardid desc";
 		ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
 		try {
 			Connection conn = DatabaseUtil.getConnection();
@@ -101,7 +120,34 @@ public class BoardDAO {
 				data.setAlive(rs.getInt(5));
 				data.setUser(rs.getString(6));
 				data.setType(rs.getString(7));
-				System.out.println(data);
+				list.add(data);
+			}
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public ArrayList<BoardDTO> getBoard2() {
+		String sql = "select * from board where boardid < ? and alive = 1 and contentType = 'peo' order by boardid desc";
+		ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
+		try {
+			Connection conn = DatabaseUtil.getConnection();
+			PreparedStatement pstmt = null;
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, 100000);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				BoardDTO data = new BoardDTO();
+				data.setBid(rs.getInt(1));
+				data.setTitle(rs.getString(2));
+				data.setContents(rs.getString(3));
+				data.setDatetime(rs.getString(4));
+				data.setAlive(rs.getInt(5));
+				data.setUser(rs.getString(6));
+				data.setType(rs.getString(7));
 				list.add(data);
 			}
 			return list;

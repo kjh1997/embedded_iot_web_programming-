@@ -18,7 +18,7 @@ System.out.println("test"+dto.getType());
 			<form accept-charset="UTF-8" action="./boardCreateAction.jsp">
 				<div class="mb-3">
 					<h3>자기 소개</h3>
-					<label for="title" style="border: 1px solid #444444;"><%=dto.getContents()%></label>
+					<label for="title" style="border: 1px solid #444444;"><%=dto.getTitle()%></label>
 				</div>
 				<div class="mb-3">
 					<h3>주요 경력</h3>
@@ -37,7 +37,16 @@ System.out.println("test"+dto.getType());
 				</tbody>
 				</table>
 				<div style="display: inline-block; margin-top:10px">
-				<a href="./boardView.jsp"><button type="button" class="btn btn-blue float-end" style="background : #00F5FF">목록</button></a>
+				<a href="javascript:history.back();"><button type="button" class="btn btn-blue float-end" style="background : #00F5FF; margin-right : 10px;">목록</button></a>
+				
+				
+				<% String sess = (String)session.getAttribute("id");
+				System.out.println(sess + dto.getUser());%>
+
+			      <% if(sess.equals(dto.getUser())){ %>
+									<a href="./boardModify.jsp?bno=<%=dto.getBid()%>"><button type="button" class="btn btn-blue float-end" style="background : #00F5FF; margin-right : 10px; ">수정</button></a>
+					
+					<% }%>
 			 	</div>
 				
 			</form>

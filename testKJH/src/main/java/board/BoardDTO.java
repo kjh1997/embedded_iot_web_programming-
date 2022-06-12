@@ -9,14 +9,21 @@ public class BoardDTO {
 	private int alive;
 	private String type;
 	private String pn;
+	private String contentType;
+	
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+	}
+	
+	public String getContentType() {
+		return contentType;
+	}
 	
 	public void setPn(String pn) {
-		System.out.print("???"+pn);
 		this.pn = pn;
 	}
 	
 	public String getPn() {
-		System.out.print("???123"+pn);
 		return pn;
 	}
 	

@@ -12,6 +12,15 @@
 		
 	}
 %>
+    <style>
+    .check{
+    display: inline;
+    border: 1px solid black
+    }
+    .checkbox{
+    margin-left: 10px;
+    }
+    </style>
 	<article>
 		<div class="container" role="main">
 			<h2>글 작성</h2>
@@ -38,7 +47,12 @@
 				    <option value="Ios">IOS</option>
 				    <option value="ML-OPS">ML-OPS</option>
 			 	</select>
-				<a href="./boardView.jsp"><button type="button" class="btn btn-blue float-end" style="background : #00F5FF">목록</button></a>
+			 	<label class="checkbox">분류 선택</label>
+			 	<div class="check">
+			 	<label><input type="radio" name="contentType" value="peo" checked> 구인</label>
+                <label><input type="radio" name="contentType" value="job"> 구직</label>
+			 	</div>
+				<a a href="javascript:history.back();"><button type="button" class="btn btn-blue float-end" style="background : #00F5FF">목록</button></a>
 			 	
 				<button type="submit" class="btn btn-dark float-end">Save</button>
 				

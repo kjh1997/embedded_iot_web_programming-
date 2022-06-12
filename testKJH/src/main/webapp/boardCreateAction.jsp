@@ -18,7 +18,7 @@
 	System.out.println("date : "+ now);
 	int alive = 1;
 	String id = (String)session.getAttribute("id");
-	System.out.print(dao.createBoard(board.getTitle(), board.getContents(), id, formattedString , alive, board.getType(), board.getPn()));
+	System.out.print(dao.createBoard(board.getTitle(), board.getContents(), id, formattedString , alive, board.getType(), board.getPn(), board.getContentType()));
 
 	PrintWriter script = response.getWriter();
 	script.println("<script>");

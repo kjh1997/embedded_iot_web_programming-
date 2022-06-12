@@ -23,7 +23,10 @@
           <a class="nav-link active" aria-current="page" href="./index.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./boardView.jsp">게시판</a>
+          <a class="nav-link" href="./boardView.jsp">구직 게시판</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./boardView2.jsp">구인 게시판</a>
         </li>
         
       </ul>
