@@ -45,7 +45,7 @@ System.out.println("test"+dto.getType());
 
 			      <% if(sess.equals(dto.getUser())){ %>
 									<a href="./boardModify.jsp?bno=<%=dto.getBid()%>"><button type="button" class="btn btn-blue float-end" style="background : #00F5FF; margin-right : 10px; ">수정</button></a>
-					
+									<a href="./boardDeleteAction.jsp?bno=<%=dto.getBid()%>"><button type="button" class="btn btn-blue float-end" style="background : #FF0000; margin-right : 10px; ">삭제</button></a>
 					<% }%>
 			 	</div>
 				

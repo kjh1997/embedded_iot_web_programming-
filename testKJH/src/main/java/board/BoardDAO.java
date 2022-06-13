@@ -10,6 +10,21 @@ import util.DatabaseUtil;
 public class BoardDAO {
 	private ResultSet rs;
 	
+	public int deleteBoard(String bid) {
+		String sql = "UPDATE board SET alive = ? WHERE boardid = "+bid;
+		try {
+			Connection conn = DatabaseUtil.getConnection();
+			PreparedStatement pstmt = null;
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1,0);
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	
 	public int modifyBoard(String title, String contents, String type, String pn, String contentType, String bid) {
 		String sql = "UPDATE board SET title = ?, context = ?, type = ?, contentType = ?, "
 				+ "pnum = ? WHERE boardid = "+bid;

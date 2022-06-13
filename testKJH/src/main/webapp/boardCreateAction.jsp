@@ -13,7 +13,7 @@
 	request.setCharacterEncoding("utf8");
 	System.out.println(board.getTitle() + board.getContents() );
 	LocalDate now = LocalDate.now();
-	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 	String formattedString = now.format(formatter);
 	System.out.println("date : "+ now);
 	int alive = 1;
