@@ -77,7 +77,7 @@ if(list.size() < realPageNum+10){
 		<tr>
 		
 		<% if(list.get(i).getTitle().contains(searchKeyword)) { %>
-		<td><a style="text-decoration: none"href="./boardEntity2.jsp?bno=<%=list.get(i).getBid()%>"><%=list.get(i).getBid()%></a></td>
+		<td><a style="text-decoration: none"href="./boardEntity.jsp?bno=<%=list.get(i).getBid()%>"><%=list.get(i).getBid()%></a></td>
 		<td><%=list.get(i).getTitle()%></td>
 		<td><%=list.get(i).getUser()%></td>
 		<td><%=list.get(i).getDatetime()%></td>

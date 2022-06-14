@@ -15,6 +15,19 @@
 	}
 </style>
 <%
+String pageNum;
+if (request.getParameter("page") != null) {
+	pageNum = request.getParameter("page"); 
+}else{
+	pageNum = "0";
+}
+int realPageNum;
+if(pageNum=="0"){
+	realPageNum = (int)0;
+} else {
+	realPageNum = Integer.parseInt(pageNum) * 10;
+}
+
 String searchKeyword;
 if (request.getParameter("search") != null) {
 searchKeyword = request.getParameter("search"); 
@@ -24,6 +37,13 @@ searchKeyword = request.getParameter("search");
 BoardDAO dao = new BoardDAO();
 ArrayList<BoardDTO> list = dao.getBoard();
 request.setCharacterEncoding("UTF-8");
+
+int maxPage = 0;
+if(list.size() < realPageNum+10){
+	maxPage = list.size();
+}else {
+	maxPage = realPageNum+10;
+}
 %>
 <meta charset="UTF-8">
 <div class="container">
@@ -52,7 +72,7 @@ request.setCharacterEncoding("UTF-8");
 <thead>
 	<tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>유형</th></tr>
 </thead>
-	<% for(int i = 0 ; i < list.size(); i++){ %>
+	<% for(int i = realPageNum ; i < maxPage; i++){ %>
 		
 		<tr>
 		<% if(list.get(i).getTitle().contains(searchKeyword)) { %>
@@ -72,7 +92,7 @@ request.setCharacterEncoding("UTF-8");
       <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
     </li>
     <% for(int i = 0 ; i < (list.size()+10)/10; i++){ %>
-    <li class="page-item"><a class="page-link" href="#"><%=i+1%></a></li>
+    <li class="page-item"><a class="page-link" href="./boardView.jsp?page=<%=i%>"><%=i+1%></a></li>
     <%} %>
     <li class="page-item">
       <a class="page-link" href="#">Next</a>

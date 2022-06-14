@@ -20,10 +20,19 @@
 	String id = (String)session.getAttribute("id");
 	System.out.print(dao.createBoard(board.getTitle(), board.getContents(), id, formattedString , alive, board.getType(), board.getPn(), board.getContentType()));
 
+	String contentType = null;
+	if (request.getParameter("contentType")!= null){
+		contentType=(String) request.getParameter("contentType");	
+	}
+	
 	PrintWriter script = response.getWriter();
 	script.println("<script>");
 	script.println("alert('작성완료')");
-	script.println("location.href = 'boardView.jsp';");
+	if(contentType.equals("peo")){
+		script.println("location.href = 'boardView2.jsp';");
+	}else{
+		script.println("location.href = 'boardView.jsp';");
+	}
 	script.println("</script>");
 	script.close();
 	return;

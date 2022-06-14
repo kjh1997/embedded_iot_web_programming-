@@ -13,7 +13,7 @@ BoardDTO dto = dao.getBoardOne(request.getParameter("bno"));
 System.out.println("test"+dto.getType());
 %>
 
-	<article>
+	<article style="margin:20px">
 		<div class="container" role="main">
 			<form accept-charset="UTF-8" action="./boardCreateAction.jsp">
 				<div class="mb-3">
@@ -36,19 +36,20 @@ System.out.println("test"+dto.getType());
 					</tr>	
 				</tbody>
 				</table>
-				<div style="display: inline-block; margin-top:10px">
-				<a href="javascript:history.back();"><button type="button" class="btn btn-blue float-end" style="background : #00F5FF; margin-right : 10px;">목록</button></a>
+				<div style="display:flex; justify-content:flex-end;">
+				   <div style="display: inline-block; margin-top:10px;">
+				      <a href="javascript:history.back();"><button type="button" class="btn btn-blue float-end" style="background : #00F5FF; margin-right : 10px;">목록</button></a>
 				
 				
-				<% String sess = (String)session.getAttribute("id");
-				System.out.println(sess + dto.getUser());%>
+				      <% String sess = (String)session.getAttribute("id");
+				         System.out.println(sess + dto.getUser());%>
 
-			      <% if(sess.equals(dto.getUser())){ %>
+			          <% if(dto.getUser().equals(sess)){ %>
 									<a href="./boardModify.jsp?bno=<%=dto.getBid()%>"><button type="button" class="btn btn-blue float-end" style="background : #00F5FF; margin-right : 10px; ">수정</button></a>
 									<a href="./boardDeleteAction.jsp?bno=<%=dto.getBid()%>"><button type="button" class="btn btn-blue float-end" style="background : #FF0000; margin-right : 10px; ">삭제</button></a>
-					<% }%>
-			 	</div>
-				
+					  <% }%>
+			 	   </div>
+				</div>
 			</form>
 			<div >
 			</div>

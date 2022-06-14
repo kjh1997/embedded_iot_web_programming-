@@ -21,7 +21,7 @@
     margin-left: 10px;
     }
     </style>
-	<article>
+	<article style="margin:20px;">
 		<div class="container" role="main">
 			<h2>글 작성</h2>
 			<form accept-charset="UTF-8" action="./boardCreateAction.jsp">
