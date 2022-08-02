@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>visibility 프로퍼티</title>
+</head>
+<body>
+
+    <input type="text" name="a" id="a"><br>
+    <input type="text" name="a" id="a"><br>
+    <input type="text" name="a" id="a"><br>
+    <input type="text" name="a" id="a"><br>
+    <input type="text" name="a" id="a"><br>
+    <input type="text" name="a" id="a"><br>
+    <input type="text" name="a" id="a"><br>
+    <input type="text" name="a" id="a"><br>
+    <input type="text" name="a" id="a"><br>
+    <input type="text" name="a" id="aa"><br>
+    <button type="button" onclick="getId()">합계구하기 ver id</button>
+    
+    <button type="button" onclick="getNameAdd()">합계구하기 ver name</button>
+    <label>result</label><span id="result"></span>
+</body>
+
+
+</html>
+<script>
+    function getId(){
+        document.getElementById("result").innerHTML = parseInt(document.getElementById("a").value);
+
+    }
+
+
+
+</script>
